@@ -9,7 +9,6 @@ import DayListItem from './DayListItem';
 *** setDay:Function accepts the name of the day eg. "Monday", "Tuesday"
 **/
 export default function DayList(props) {
-console.log(props);
  return(
    <ul>
       {props.days.map(d =>
