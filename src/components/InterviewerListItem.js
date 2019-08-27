@@ -9,7 +9,7 @@ export default function InterviewerListItem(props) {
   var interviewerListItemClass = classNames({
     'interviewers__item': true,
     'interviewers__item--selected': props.selected,
-    // 'interviewers__item--clickable':
+    'interviewers__item--clickable': !props.selected
   });
 
   var interviewerListItemImageClass = classNames({
@@ -20,13 +20,13 @@ export default function InterviewerListItem(props) {
   return(
       <li
         className={interviewerListItemClass}
-        onClick={() => props.setInterviewer(props.name)}>
+        onClick={event => props.setInterviewer(props.id)}>
           <img
             className={interviewerListItemImageClass}
             src={props.avatar}
             alt={props.name}
           />
-        {props.name}
+        { props.selected && props.name}
       </li>
     );
 }

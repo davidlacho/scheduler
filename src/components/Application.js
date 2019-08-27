@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "components/Application.scss";
 import DayList from "./DayList";
+import InterviewerList from "./InterviewerList";
 
 // Mock data:
 
@@ -32,6 +33,7 @@ const interviewers = [
 
 export default function Application(props) {
   const [day, setDay] = useState("Monday");
+  const [interviewer, setInterviewer] = useState(1);
   return (
     <main className="layout">
       <section className="sidebar">
@@ -42,7 +44,11 @@ export default function Application(props) {
         />
       </section>
       <section className="schedule">
-        {/* Replace this with the schedule elements durint the "The Scheduler" activity. */}
+        <InterviewerList
+          interviewers = {interviewers}
+          interviewer = {interviewer}
+          setInterviewer= {setInterviewer}
+        />
       </section>
     </main>
   );
